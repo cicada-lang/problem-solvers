@@ -1,0 +1,24 @@
+{
+  "name": "@cicada-lang/problem-solvers",
+  "version": "0.0.1",
+  "repository": "github:cicada-lang/problem-solvers",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "node --test",
+    "format": "prettier src docs --write"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.0.0",
+    "typescript": "^5.5.4"
+  },
+  "license": "GPL-3.0-or-later"
+}
