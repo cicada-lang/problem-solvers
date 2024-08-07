@@ -1,3 +1,5 @@
+复习 common-lisp -- 为了能读懂书中已有的 common-lisp 代码
+
 # 3 Classical Problem Solving
 
 既然用 generic 函数了，也许可以直接命名为：
