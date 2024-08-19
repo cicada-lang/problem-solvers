@@ -1,6 +1,6 @@
-# 3 Classical Problem Solving
+# classical-solver
 
-`ClassicalSolver`
+`classical-solver/ClassicalSolver`
 
 `isFinished`
 `equal`
