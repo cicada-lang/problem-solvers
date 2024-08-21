@@ -1,12 +1,12 @@
 import { type ProblemSpace } from "./ProblemSpace.js"
 
-export function problemExpand<Operator, Problem>(
-  solver: ProblemSpace<Problem, Operator>,
+export function problemExpand<Branch, Problem>(
+  solver: ProblemSpace<Problem, Branch>,
   problem: Problem,
-): Array<[Operator, Problem]> {
-  const operators = solver.validOperators(problem)
-  return operators.map((operator) => [
-    operator,
-    solver.operatorApply(operator, problem),
+): Array<[Branch, Problem]> {
+  const branches = solver.validBranches(problem)
+  return branches.map((branch) => [
+    branch,
+    solver.branchApply(branch, problem),
   ])
 }

@@ -1,7 +1,7 @@
-export type ProblemSpace<Problem, Operator> = {
+export type ProblemSpace<Problem, Branch> = {
   name: string
   problemIsSolution: (problem: Problem) => boolean
   problemEqual: (left: Problem, right: Problem) => boolean
-  validOperators: (problem: Problem) => Array<Operator>
-  operatorApply: (operator: Operator, problem: Problem) => Problem
+  validBranches: (problem: Problem) => Array<Branch>
+  branchApply: (branch: Branch, problem: Problem) => Problem
 }
