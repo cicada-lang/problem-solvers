@@ -1,7 +1,7 @@
-import { type ClassicalSolver } from "./ClassicalSolver.js"
+import { type ProblemSpace } from "./ProblemSpace.js"
 
 export function problemExpand<Operator, Problem>(
-  solver: ClassicalSolver<Problem, Operator>,
+  solver: ProblemSpace<Problem, Operator>,
   problem: Problem,
 ): Array<[Operator, Problem]> {
   const operators = solver.validOperators(problem)

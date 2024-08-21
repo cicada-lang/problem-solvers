@@ -1,4 +1,4 @@
-export type ClassicalSolver<Problem, Operator> = {
+export type ProblemSpace<Problem, Operator> = {
   name: string
   problemIsSolution: (problem: Problem) => boolean
   problemEqual: (left: Problem, right: Problem) => boolean

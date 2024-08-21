@@ -1,6 +1,5 @@
 # cps
 
-[cps] rename `ClassicalSolver` to `ProblemSpace`
 [cps] rename `classical-solver/` to `cps/`
 
 [cps] write readme about `cps/`
