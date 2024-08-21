@@ -1,7 +1,5 @@
 # cps
 
-[cps] rename `classical-solver/` to `cps/`
-
 [cps] write readme about `cps/`
 
 [cps] `Searching`
