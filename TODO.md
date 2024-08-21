@@ -1,7 +1,3 @@
-# cps
-
-[cps] write readme about `cps/`
-
 [cps] `Searching`
 
 [cps] 实现第三章的搜索算法

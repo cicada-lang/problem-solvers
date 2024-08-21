@@ -2,6 +2,10 @@
 
 Reading "Building Problem Solvers" by Kenneth D. Forbus and Johan de Kleer, 1993.
 
+In the src/:
+
+- [cps/](src/cps/) -- Classical Problem Solving
+
 ## Development
 
 ```sh
