@@ -1,7 +1,7 @@
 export type LineId = string
 export type StationId = string
 
-export type Position = string
+export type Position = { x: number; y: number }
 
 export type Line = {
   id: LineId
@@ -26,4 +26,13 @@ export function createSubway(name: string): Subway {
     lineMap: new Map(),
     stationMap: new Map(),
   }
+}
+
+export function defineStation(
+  subway: Subway,
+  stationId: StationId,
+  lineIds: Array<LineId>,
+  position: Position,
+): void {
+  ///
 }

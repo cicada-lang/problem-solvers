@@ -1,6 +1,4 @@
-[cps] [subway] `defineStation`
-
-[cps] [subway] `defineLine` -- take a ordered list of stations
+[cps] [subway] `defineLine` -- take an ordered list of stations
 
 [cps] [subway] define `bostonSubway`
 
