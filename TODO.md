@@ -1,5 +1,3 @@
-[cps] [subway] `defineLine` -- take an ordered list of stations
-
 [cps] [subway] define `bostonSubway`
 
 [cps] [problem-space] [subway] `SubwayProblemSpace` & `createSubwayProblemSpace`

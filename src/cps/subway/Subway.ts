@@ -40,3 +40,14 @@ export function defineStation(
     position,
   })
 }
+
+export function defineLine(
+  subway: Subway,
+  lineId: LineId,
+  stations: Array<StationId>,
+): void {
+  subway.lineMap.set(lineId, {
+    id: lineId,
+    stations,
+  })
+}
