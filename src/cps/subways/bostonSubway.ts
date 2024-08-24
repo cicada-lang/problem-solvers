@@ -1,16 +1,42 @@
-import { createSubway, defineStation } from "../subway/index.js"
+import { createSubway, defineLine, defineStation } from "../subway/index.js"
 
 export const bostonSubway = createSubway("boston-subway")
 
+defineLine(bostonSubway, "red-line", [
+  "south-station",
+  "washington",
+  "park-street",
+  "kendall-square",
+  "central-square",
+  "harvard-square",
+])
 
+defineLine(bostonSubway, "green-line", [
+  "boston-u",
+  "copley-square",
+  "park-street",
+  "government-center",
+  "haymarket",
+  "north-station",
+])
 
+defineLine(bostonSubway, "orange-line", [
+  "washington",
+  "state",
+  "haymarket",
+  "north-station",
+])
+
+defineLine(bostonSubway, "blue-line", [
+  "wood-island",
+  "airport",
+  "aquarium",
+  "state",
+  "government-center",
+])
 
 // prettier-ignore
 {
-  // defineLine(bostonSubway, "red-line")
-  // defineLine(bostonSubway, "green-line")
-  // defineLine(bostonSubway, "orange-line")
-  // defineLine(bostonSubway, "blue-line")
 
   defineStation(bostonSubway, "airport", ["blue-line"], {x: 4.0, y: 1.0})
   defineStation(bostonSubway, "aquarium", ["blue-line"], {x: 3.75, y: 0.1})

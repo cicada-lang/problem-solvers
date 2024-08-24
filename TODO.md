@@ -1,5 +1,3 @@
-[cps] [subway] define `bostonSubway`
-
 [cps] [problem-space] [subway] `SubwayProblemSpace` & `createSubwayProblemSpace`
 
 - Problem = `Station`
