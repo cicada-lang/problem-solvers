@@ -31,8 +31,12 @@ export function createSubway(name: string): Subway {
 export function defineStation(
   subway: Subway,
   stationId: StationId,
-  lineIds: Array<LineId>,
+  lines: Array<LineId>,
   position: Position,
 ): void {
-  ///
+  subway.stationMap.set(stationId, {
+    id: stationId,
+    lines: new Set(lines),
+    position,
+  })
 }
