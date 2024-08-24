@@ -1,7 +1,7 @@
 import { ramify } from "./ProblemPath.js"
 import { type Searching } from "./Searching.js"
 
-export function breadthFirstexplore<Problem, Branch>(
+export function breadthFirstExplore<Problem, Branch>(
   searching: Searching<Problem, Branch>,
 ): void {
   const path = searching.queue.shift()

@@ -1,4 +1,5 @@
-[cps] `breadthFirstSearchStep` -- 过滤掉带有 loop 的 path
+[cps] `breadthFirstExplore` -- 过滤掉带有 loop 的 path
+
 [cps] 实现第三章的地铁例子
 [cps] 实现第三章的代数例子
 
