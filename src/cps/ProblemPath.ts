@@ -7,14 +7,17 @@ import { type ProblemSpace } from "./ProblemSpace.js"
 // - current: p2
 
 export type ProblemPath<Problem, Branch> = {
+  space: ProblemSpace<Problem, Branch>
   prefix: Array<[Problem, Branch]>
   current: Problem
 }
 
 export function initialProblemPath<Problem, Branch>(
+  space: ProblemSpace<Problem, Branch>,
   problem: Problem,
 ): ProblemPath<Problem, Branch> {
   return {
+    space,
     prefix: [],
     current: problem,
   }
@@ -26,17 +29,17 @@ export function extendProblemPath<Problem, Branch>(
   problem: Problem,
 ): ProblemPath<Problem, Branch> {
   return {
+    space: path.space,
     prefix: [...path.prefix, [path.current, branch]],
     current: problem,
   }
 }
 
 export function problemPathHasLoop<Branch, Problem>(
-  space: ProblemSpace<Branch, Problem>,
   path: ProblemPath<Branch, Problem>,
 ): boolean {
-  for (const [problem, branch] of path.prefix) {
-    if (space.problemEqual(problem, path.current)) {
+  for (const [problem, _branch] of path.prefix) {
+    if (path.space.problemEqual(problem, path.current)) {
       return true
     }
   }
@@ -45,12 +48,15 @@ export function problemPathHasLoop<Branch, Problem>(
 }
 
 export function ramify<Branch, Problem>(
-  space: ProblemSpace<Problem, Branch>,
   path: ProblemPath<Problem, Branch>,
 ): Array<ProblemPath<Problem, Branch>> {
-  const branches = space.validBranches(path.current)
+  const branches = path.space.validBranches(path.current)
   const newPaths = branches.map((branch) =>
-    extendProblemPath(path, branch, space.branchApply(branch, path.current)),
+    extendProblemPath(
+      path,
+      branch,
+      path.space.branchApply(branch, path.current),
+    ),
   )
-  return newPaths.filter((newPath) => problemPathHasLoop(space, newPath))
+  return newPaths.filter((newPath) => !problemPathHasLoop(newPath))
 }

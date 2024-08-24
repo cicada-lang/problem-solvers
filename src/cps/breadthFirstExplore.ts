@@ -10,7 +10,7 @@ export function breadthFirstExplore<Problem, Branch>(
   if (searching.space.problemIsSolved(path.current)) {
     searching.solved.push(path)
   } else {
-    const newPaths = ramify(searching.space, path)
+    const newPaths = ramify(path)
     searching.queue.push(...newPaths)
   }
 }
