@@ -16,10 +16,10 @@ export const bostonSubway = createSubway("boston-subway")
 
   defineStation(bostonSubway, "park-street", ["green-line", "red-line"], {x: 2.5, y:-0.5})
   defineStation(bostonSubway, "government-center", ["green-line", "blue-line"], {x:2.9,y: -0.25})
-  defineStation(bostonSubway, "copley-square", ["green-line",], {x:1.0, y: -1.0})
-  defineStation(bostonSubway, "boston-u", ["green-line",], {x:-1.0, y:-1.0})
+  defineStation(bostonSubway, "copley-square", ["green-line"], {x:1.0, y: -1.0})
+  defineStation(bostonSubway, "boston-u", ["green-line"], {x:-1.0, y:-1.0})
   defineStation(bostonSubway, "north-station", ["green-line", "orange-line"], {x:2.5, y:0.75})
-  defineStation(bostonSubway, "haymarket", ["orange-line" ,"green-line",], {x: 2.75, y:0.5})
+  defineStation(bostonSubway, "haymarket", ["orange-line" ,"green-line"], {x: 2.75, y:0.5})
 
   defineStation(bostonSubway, "south-station", ["red-line"], {x: 3.0, y:-1.0})
   defineStation(bostonSubway, "washington", ["red-line", "orange-line"], {x:2.75, y:-0.75})
