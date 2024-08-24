@@ -1,5 +1,7 @@
 [cps] 实现第三章的地铁例子
 
+[cps] add debug options
+
 [cps] 实现第三章的代数例子
 
 [cps] [refactoring] 用单个的 `Solver` class 来实现 -- 而不是 `ProblemSpace` + `Searching`

@@ -1,8 +1,8 @@
 import { type ProblemSpace } from "./ProblemSpace.js"
 
 // 假设我们用 (p) 来表示 Problem，用 [b] 来表示 Branch，
-// 那么形如 (p0) -> [b0] -> (p1) -> [b1] -> (p2)
-// 的 Path，会被实现为：
+// 那么形如 (p0) -> [b0] -> (p1) -> [b1] -> (p2) 的 Path，
+// 会被实现为：
 // - prefix: [[p0, b0], [p1, b1]]
 // - current: p2
 
