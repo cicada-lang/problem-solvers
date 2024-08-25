@@ -1,5 +1,5 @@
-export type LineId = string
 export type StationId = string
+export type LineId = string
 
 export type Position = { x: number; y: number }
 

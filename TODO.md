@@ -1,7 +1,4 @@
-[cps] [space] [subway] `SubwaySpace` & `createSubwaySpace`
-
-- Node = Station
-- Edge = `TakeLine: { oldStation, line, newStation }`
+[cps] [space] [subway] `createSubwaySpace`
 
 [cps] [space] add debug options
 
