@@ -1,4 +1,4 @@
-[cps] [space] [subway] `createSubwaySpace`
+[cps] [space] [subway] `createSubwaySpace` -- fix `branch` and `edgeApply`
 
 [cps] [space] add debug options
 
