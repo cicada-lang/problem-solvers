@@ -55,8 +55,6 @@ searching.space.problemIsSolved(path.current)
 书中的实现是只有 `Space`，
 search 函数的搜索状态没有作为一个 `Searching` class 暴露出来。
 
-我将同时做出这两种风格的实现，作为一个 API 设计的练习。
-
 我怀疑，Space + Searching 是更好的设计，
 但是 Space 的所有 interface 好像都是为了 search 来服务的，
 所以也许 Space 和 Space 应该合并为 Solver。
