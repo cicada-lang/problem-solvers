@@ -1,9 +1,7 @@
 import { ramify } from "./Path.js"
 import { type Searching } from "./Searching.js"
 
-export function breadthFirstExplore<Node, Edge>(
-  searching: Searching<Node, Edge>,
-): void {
+export function span<Node, Edge>(searching: Searching<Node, Edge>): void {
   const path = searching.queue.shift()
   if (path === undefined) return
 
