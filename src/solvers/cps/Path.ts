@@ -1,45 +1,43 @@
 import { type Space } from "./Space.js"
 
-// 假设我们用 (p) 来表示 Problem，用 [b] 来表示 Branch，
-// 那么形如 (p0) -> [b0] -> (p1) -> [b1] -> (p2) 的 Path，
+// 假设我们用 (n) 来表示 Node，用 [e] 来表示 Edge，
+// 那么形如 (n0) -> [e0] -> (n1) -> [e1] -> (n2) 的 Path，
 // 会被实现为：
-// - prefix: [[p0, b0], [p1, b1]]
-// - current: p2
+// - prefix: [[n0, e0], [n1, e1]]
+// - current: n2
 
-export type Path<Problem, Branch> = {
-  space: Space<Problem, Branch>
-  prefix: Array<[Problem, Branch]>
-  current: Problem
+export type Path<Node, Edge> = {
+  space: Space<Node, Edge>
+  prefix: Array<[Node, Edge]>
+  current: Node
 }
 
-export function initialPath<Problem, Branch>(
-  space: Space<Problem, Branch>,
-  problem: Problem,
-): Path<Problem, Branch> {
+export function initialPath<Node, Edge>(
+  space: Space<Node, Edge>,
+  node: Node,
+): Path<Node, Edge> {
   return {
     space,
     prefix: [],
-    current: problem,
+    current: node,
   }
 }
 
-export function extendPath<Problem, Branch>(
-  path: Path<Problem, Branch>,
-  branch: Branch,
-  problem: Problem,
-): Path<Problem, Branch> {
+export function extendPath<Node, Edge>(
+  path: Path<Node, Edge>,
+  edge: Edge,
+  node: Node,
+): Path<Node, Edge> {
   return {
     space: path.space,
-    prefix: [...path.prefix, [path.current, branch]],
-    current: problem,
+    prefix: [...path.prefix, [path.current, edge]],
+    current: node,
   }
 }
 
-export function pathHasLoop<Branch, Problem>(
-  path: Path<Branch, Problem>,
-): boolean {
-  for (const [problem, _branch] of path.prefix) {
-    if (path.space.problemEqual(problem, path.current)) {
+export function pathHasLoop<Edge, Node>(path: Path<Edge, Node>): boolean {
+  for (const [node, _edge] of path.prefix) {
+    if (path.space.nodeEqual(node, path.current)) {
       return true
     }
   }
@@ -47,12 +45,12 @@ export function pathHasLoop<Branch, Problem>(
   return false
 }
 
-export function ramify<Branch, Problem>(
-  path: Path<Problem, Branch>,
-): Array<Path<Problem, Branch>> {
-  const branches = path.space.validBranches(path.current)
-  const newPaths = branches.map((branch) =>
-    extendPath(path, branch, path.space.branchApply(branch, path.current)),
+export function ramify<Edge, Node>(
+  path: Path<Node, Edge>,
+): Array<Path<Node, Edge>> {
+  const edges = path.space.validEdgees(path.current)
+  const newPaths = edges.map((edge) =>
+    extendPath(path, edge, path.space.edgeApply(edge, path.current)),
   )
   return newPaths.filter((newPath) => !pathHasLoop(newPath))
 }

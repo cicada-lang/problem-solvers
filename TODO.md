@@ -1,7 +1,3 @@
-[cps] [refactoring] `Space<Problem, Branch>` 改为 `Space<Node, Edge>`
-
-- 相应的 interface 函数名也要修改
-
 [cps] [space] [subway] `SubwaySpace` & `createSubwaySpace`
 
 - Problem = Station

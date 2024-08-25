@@ -1,20 +1,20 @@
 import { type Path } from "./Path.js"
 import { type Space } from "./Space.js"
 
-export type Searching<Problem, Branch> = {
-  space: Space<Problem, Branch>
-  problem: Problem
-  queue: Array<Path<Problem, Branch>>
-  solved: Array<Path<Problem, Branch>>
+export type Searching<Node, Edge> = {
+  space: Space<Node, Edge>
+  node: Node
+  queue: Array<Path<Node, Edge>>
+  solved: Array<Path<Node, Edge>>
 }
 
-export function createSearching<Problem, Branch>(
-  space: Space<Problem, Branch>,
-  problem: Problem,
-): Searching<Problem, Branch> {
+export function createSearching<Node, Edge>(
+  space: Space<Node, Edge>,
+  node: Node,
+): Searching<Node, Edge> {
   return {
     space,
-    problem,
+    node,
     queue: [],
     solved: [],
   }

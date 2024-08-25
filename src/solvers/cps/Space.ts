@@ -1,7 +1,7 @@
-export type Space<Problem, Branch> = {
+export type Space<Node, Edge> = {
   name: string
-  problemIsSolved: (problem: Problem) => boolean
-  problemEqual: (left: Problem, right: Problem) => boolean
-  validBranches: (problem: Problem) => Array<Branch>
-  branchApply: (branch: Branch, problem: Problem) => Problem
+  nodeIsEnd: (node: Node) => boolean
+  nodeEqual: (left: Node, right: Node) => boolean
+  branch: (node: Node) => Array<Edge>
+  edgeApply: (edge: Edge, node: Node) => Node
 }
