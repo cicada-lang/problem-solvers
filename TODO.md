@@ -1,12 +1,7 @@
 [cps] [space] [subway] `SubwaySpace` & `createSubwaySpace`
 
-- Problem = Station
-
-  虽然这里写的是 Problem = Station，
-  但是其实 Station 本身不是问题，
-  到达某个 Station 才是问题。
-
-- Branch = `TakeLine: { oldStation, line, newStation }`
+- Node = Station
+- Edge = `TakeLine: { oldStation, line, newStation }`
 
 [cps] [space] add debug options
 

@@ -7,7 +7,7 @@ export function breadthFirstExplore<Node, Edge>(
   const path = searching.queue.shift()
   if (path === undefined) return
 
-  if (searching.space.nodeIsSolved(path.current)) {
+  if (searching.space.nodeIsEnd(path.current)) {
     searching.solved.push(path)
   } else {
     const newPaths = ramify(path)

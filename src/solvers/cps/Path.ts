@@ -48,7 +48,7 @@ export function pathHasLoop<Edge, Node>(path: Path<Edge, Node>): boolean {
 export function ramify<Edge, Node>(
   path: Path<Node, Edge>,
 ): Array<Path<Node, Edge>> {
-  const edges = path.space.validEdgees(path.current)
+  const edges = path.space.branch(path.current)
   const newPaths = edges.map((edge) =>
     extendPath(path, edge, path.space.edgeApply(edge, path.current)),
   )
