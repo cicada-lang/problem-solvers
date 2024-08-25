@@ -1,4 +1,4 @@
-import { type ProblemSpace } from "./ProblemSpace.js"
+import { type Space } from "./Space.js"
 
 // 假设我们用 (p) 来表示 Problem，用 [b] 来表示 Branch，
 // 那么形如 (p0) -> [b0] -> (p1) -> [b1] -> (p2) 的 Path，
@@ -7,13 +7,13 @@ import { type ProblemSpace } from "./ProblemSpace.js"
 // - current: p2
 
 export type ProblemPath<Problem, Branch> = {
-  space: ProblemSpace<Problem, Branch>
+  space: Space<Problem, Branch>
   prefix: Array<[Problem, Branch]>
   current: Problem
 }
 
 export function initialProblemPath<Problem, Branch>(
-  space: ProblemSpace<Problem, Branch>,
+  space: Space<Problem, Branch>,
   problem: Problem,
 ): ProblemPath<Problem, Branch> {
   return {

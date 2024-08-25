@@ -1,6 +1,8 @@
-[cps] `problem-solver/` -- 用单个的 `Solver` class 来实现 -- 而不是 `ProblemSpace` + `Searching`
+[cps] [refactoring] rename ProblemPath to Path
 
-[cps] [problem-space] [subway] `SubwayProblemSpace` & `createSubwayProblemSpace`
+[cps] `solver/` -- 用单个的 `Solver` class 来实现 -- 而不是 `Space` + `Searching`
+
+[cps] [problem-space] [subway] `SubwaySpace` & `createSubwaySpace`
 
 - Problem = Station
 

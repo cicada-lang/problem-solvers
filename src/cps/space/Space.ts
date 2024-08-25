@@ -1,4 +1,4 @@
-export type ProblemSpace<Problem, Branch> = {
+export type Space<Problem, Branch> = {
   name: string
   problemIsSolved: (problem: Problem) => boolean
   problemEqual: (left: Problem, right: Problem) => boolean
