@@ -1,4 +1,9 @@
-[cps] [space] [subway] `createSubwaySpace` -- fix `branch` and `edgeApply`
+[cps] [refactoring] rename `ramify` to `branch` -- branch a path
+
+[cps] [space] [subway] `createSubwaySpace`
+
+- `branch` -- 找到一站相邻的点
+- `edgeApply` -- 平凡的根据 edge 找到下一个节点
 
 [cps] [space] add debug options
 

@@ -1,4 +1,4 @@
-import { type Space } from "../../solvers/cps"
+import { type Space } from "../../solvers/cps/index.js"
 import { type LineId, type StationId } from "./Subway.js"
 
 export type TakeLine = {
@@ -14,11 +14,8 @@ export function createSubwaySpace(initialStationId: StationId): SubwaySpace {
     name: "SubwaySpace",
     nodeIsEnd: (stationId) => stationId === initialStationId,
     nodeEqual: (left, right) => left === right,
-    branch: (stationId) => {
-      throw new Error("TODO")
-    },
-    edgeApply: (takeLine, stationId) => {
-      throw new Error("TODO")
+    sprout: () => {
+      throw new Error()
     },
   }
 }
