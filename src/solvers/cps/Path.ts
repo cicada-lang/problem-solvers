@@ -44,12 +44,3 @@ export function pathHasLoop<Edge, Node>(path: Path<Edge, Node>): boolean {
 
   return false
 }
-
-export function ramify<Edge, Node>(
-  path: Path<Node, Edge>,
-): Array<Path<Node, Edge>> {
-    const newPaths = path.space.sprout(path.current).map(([edge, node]) =>
-    extendPath(path, edge, node),
-  )
-  return newPaths.filter((newPath) => !pathHasLoop(newPath))
-}

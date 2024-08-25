@@ -1,5 +1,3 @@
-[cps] [refactoring] rename `ramify` to `branch` -- branch a path
-
 [cps] [space] [subway] `createSubwaySpace`
 
 - `branch` -- 找到一站相邻的点
