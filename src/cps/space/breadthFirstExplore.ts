@@ -1,4 +1,4 @@
-import { ramify } from "./ProblemPath.js"
+import { ramify } from "./Path.js"
 import { type Searching } from "./Searching.js"
 
 export function breadthFirstExplore<Problem, Branch>(

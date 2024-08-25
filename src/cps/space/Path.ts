@@ -6,16 +6,16 @@ import { type Space } from "./Space.js"
 // - prefix: [[p0, b0], [p1, b1]]
 // - current: p2
 
-export type ProblemPath<Problem, Branch> = {
+export type Path<Problem, Branch> = {
   space: Space<Problem, Branch>
   prefix: Array<[Problem, Branch]>
   current: Problem
 }
 
-export function initialProblemPath<Problem, Branch>(
+export function initialPath<Problem, Branch>(
   space: Space<Problem, Branch>,
   problem: Problem,
-): ProblemPath<Problem, Branch> {
+): Path<Problem, Branch> {
   return {
     space,
     prefix: [],
@@ -23,11 +23,11 @@ export function initialProblemPath<Problem, Branch>(
   }
 }
 
-export function extendProblemPath<Problem, Branch>(
-  path: ProblemPath<Problem, Branch>,
+export function extendPath<Problem, Branch>(
+  path: Path<Problem, Branch>,
   branch: Branch,
   problem: Problem,
-): ProblemPath<Problem, Branch> {
+): Path<Problem, Branch> {
   return {
     space: path.space,
     prefix: [...path.prefix, [path.current, branch]],
@@ -35,8 +35,8 @@ export function extendProblemPath<Problem, Branch>(
   }
 }
 
-export function problemPathHasLoop<Branch, Problem>(
-  path: ProblemPath<Branch, Problem>,
+export function pathHasLoop<Branch, Problem>(
+  path: Path<Branch, Problem>,
 ): boolean {
   for (const [problem, _branch] of path.prefix) {
     if (path.space.problemEqual(problem, path.current)) {
@@ -48,15 +48,11 @@ export function problemPathHasLoop<Branch, Problem>(
 }
 
 export function ramify<Branch, Problem>(
-  path: ProblemPath<Problem, Branch>,
-): Array<ProblemPath<Problem, Branch>> {
+  path: Path<Problem, Branch>,
+): Array<Path<Problem, Branch>> {
   const branches = path.space.validBranches(path.current)
   const newPaths = branches.map((branch) =>
-    extendProblemPath(
-      path,
-      branch,
-      path.space.branchApply(branch, path.current),
-    ),
+    extendPath(path, branch, path.space.branchApply(branch, path.current)),
   )
-  return newPaths.filter((newPath) => !problemPathHasLoop(newPath))
+  return newPaths.filter((newPath) => !pathHasLoop(newPath))
 }

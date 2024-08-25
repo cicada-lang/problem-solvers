@@ -1,4 +1,4 @@
 export * from "./breadthFirstExplore.js"
-export * from "./ProblemPath.js"
-export * from "./Space.js"
+export * from "./Path.js"
 export * from "./Searching.js"
+export * from "./Space.js"

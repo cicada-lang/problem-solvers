@@ -1,8 +1,6 @@
-[cps] [refactoring] rename ProblemPath to Path
-
 [cps] `solver/` -- 用单个的 `Solver` class 来实现 -- 而不是 `Space` + `Searching`
 
-[cps] [problem-space] [subway] `SubwaySpace` & `createSubwaySpace`
+[cps] [space] [subway] `SubwaySpace` & `createSubwaySpace`
 
 - Problem = Station
 
@@ -12,9 +10,9 @@
 
 - Branch = `TakeLine: { oldStation, line, newStation }`
 
-[cps] [problem-space] add debug options
+[cps] [space] add debug options
 
-[cps] [problem-space] 支持 domain-specific filtering
+[cps] [space] 支持 domain-specific filtering
 
 - 在 subway 问题中，可以定义一个 normal path 的概念，
   然后删除非 normal 的 path，所谓 normal path，
@@ -22,7 +20,7 @@
 
 # later
 
-[cps] [problem-space] `Searching` 的 API 应该是 `take` 之类的。
+[cps] [space] `Searching` 的 API 应该是 `take` 之类的。
 
 [cps] 也许用深圳的地铁作为例子，并且写一个模仿《百度地图》的前端出来试试。
 

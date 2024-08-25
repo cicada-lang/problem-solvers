@@ -17,8 +17,8 @@ export type Solver<Problem, Branch> = {
   branchApply: (branch: Branch, problem: Problem) => Problem
 
   problem: Problem
-  queue: Array<ProblemPath<Problem, Branch>>
-  solved: Array<ProblemPath<Problem, Branch>>
+  queue: Array<Path<Problem, Branch>>
+  solved: Array<Path<Problem, Branch>>
 }
 ```
 
@@ -36,8 +36,8 @@ export type Space<Problem, Branch> = {
 export type Searching<Problem, Branch> = {
   space: Space<Problem, Branch>
   problem: Problem
-  queue: Array<ProblemPath<Problem, Branch>>
-  solved: Array<ProblemPath<Problem, Branch>>
+  queue: Array<Path<Problem, Branch>>
+  solved: Array<Path<Problem, Branch>>
 }
 ```
 
